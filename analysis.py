@@ -21,7 +21,6 @@ y_test = df_test['y']
 # Fit a logistic regression model
 logit = lm.LogisticRegression()
 logit.fit(X, y)
-logit.coef_
 
 
 # make a confusion matrix for y
@@ -30,10 +29,8 @@ confusion_matrix_S1 = pd.crosstab(y_pred[S_test==1], y_test[S_test==1],normalize
 confusion_matrix_S0 = pd.crosstab(y_pred[S_test==0], y_test[S_test==0],normalize=True)
 
 # false positive rates
-print(['True positive rate of S1',confusion_matrix_S1[1][1]/(confusion_matrix_S1[1][1] + confusion_matrix_S1[0][1])])
-print(['False Positive rate of S1',confusion_matrix_S1[0][1]/(confusion_matrix_S1[0][1] + confusion_matrix_S1[1][1])])
-print(['True positive rate of S0',confusion_matrix_S0[1][1]/(confusion_matrix_S0[1][1] + confusion_matrix_S0[0][1])])
-print(['False Positive rate of S0',confusion_matrix_S0[0][1]/(confusion_matrix_S0[0][1] + confusion_matrix_S0[1][1])])
-
-
+print(['True positive rate of S1',confusion_matrix_S1[1][1]/(confusion_matrix_S1[1][1] + confusion_matrix_S1[1][0])])
+print(['False Positive rate of S1',confusion_matrix_S1[1][0]/(confusion_matrix_S1[1][0] + confusion_matrix_S1[1][1])])
+print(['True positive rate of S0',confusion_matrix_S0[1][1]/(confusion_matrix_S0[1][1] + confusion_matrix_S0[1][0])])
+print(['False Positive rate of S0',confusion_matrix_S0[1][0]/(confusion_matrix_S0[1][0] + confusion_matrix_S0[1][1])])
 
