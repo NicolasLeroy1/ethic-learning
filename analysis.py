@@ -2,6 +2,7 @@ import pandas as pd
 import sklearn.linear_model as lm
 import matplotlib.pyplot as plt
 import numpy as np
+import seaborn as sns
 
 df_train = pd.read_csv('fakedata_train.csv')
 df_test = pd.read_csv('fakedata_test.csv')
@@ -24,10 +25,15 @@ logit.coef_
 
 
 # make a confusion matrix for y
-
 y_pred = logit.predict(X_test)
 confusion_matrix_S1 = pd.crosstab(y_pred[S_test==1], y_test[S_test==1],normalize=True)
 confusion_matrix_S0 = pd.crosstab(y_pred[S_test==0], y_test[S_test==0],normalize=True)
 
-print(confusion_matrix_S1)
-print(confusion_matrix_S0)
+# false positive rates
+print(['True positive rate of S1',confusion_matrix_S1[1][1]/(confusion_matrix_S1[1][1] + confusion_matrix_S1[0][1])])
+print(['False Positive rate of S1',confusion_matrix_S1[0][1]/(confusion_matrix_S1[0][1] + confusion_matrix_S1[1][1])])
+print(['True positive rate of S0',confusion_matrix_S0[1][1]/(confusion_matrix_S0[1][1] + confusion_matrix_S0[0][1])])
+print(['False Positive rate of S0',confusion_matrix_S0[0][1]/(confusion_matrix_S0[0][1] + confusion_matrix_S0[1][1])])
+
+
+
