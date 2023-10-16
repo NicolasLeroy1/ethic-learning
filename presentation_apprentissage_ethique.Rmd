@@ -12,11 +12,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Enjeux
 
-+ Comment catégoriser une discrimination ?
++ Qu'est ce qu'un biais ?
 
-+ Comment catégoriser les source de discrimination ?
++ Quelles sont les définitions d'un système éthique ?
 
-+ Quelles méthodes pour minimiser de telles sources de discriminations ?
++ Quelles méthodes pour suivre de telles définitions ?
 
 ## Cas d'application
 
@@ -24,9 +24,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 + Gender Shades project : Tentative en 2018 de rendre plus éthique les système de reconnaissance faciale par la repondération d'échantillon.
 
+
+
 ## Deux définitions d'un modèle éthique
 
-**Equalized Odds** (Égalité des chances) : Veille à ce que les groupes bénéficient de taux de faux positifs et de vrais positifs égaux, indépendamment de la variable sensible.
+**Equalized Odds** (Égalité des erreurs) : Veille à ce que les groupes bénéficient de taux de faux positifs et de vrais positifs égaux, indépendamment de la variable sensible.
 $$\mathbb P (\hat Y=1|S=1 , Y) = \mathbb P (\hat Y=1|S=0 , Y)$$
     
 **Demographic Parity** (Parité démographique) : 
@@ -50,7 +52,10 @@ $$\mathbb P(\hat Y=y|S=0) = \mathbb P(\hat Y=y|S=1)$$
 + Correction de resultat (post-processing)
 
 
+## Conclusion
 
++ Le champs  recherche autour de l'éthique en apprentissage statistique se dévelope
++ Il existe des solutions libre qui permettent de mesurer et d'améliorer le respect de l'éthique de nos modèle
 
 
 
